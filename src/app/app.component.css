@@ -1,0 +1,42 @@
+* {margin: 0; padding:  0}
+body{
+background: rgb(0, 17, 255);
+width: 530px;
+margin: auto;
+
+
+}
+img{
+    display: block;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+    border: 1px solid #aaaaaa;
+    padding: 5px;
+    background-repeat: repeat;
+   /* ten styl jest odpowiedzialny za zaokrąglenie promieniu responsywnym 50% */
+}
+
+#calosc{
+/* background:red; */
+width: 4055px;
+height:60px;
+border-top:8px solid white;
+font: 8pt tahoma;
+margin-bottom:5px;
+}
+#gora{background: green;
+width:5005px;
+height:45px;
+margin-top:10px;
+}
+#top{background: #c8ff00;
+width:4750px;
+height:110px;
+font: 8pt tahoma;
+}
+#tresc{
+font: 8pt tahoma;
+color:rgb(0, 255, 221)
+
+}
