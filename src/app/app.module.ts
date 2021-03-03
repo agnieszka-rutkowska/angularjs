@@ -6,18 +6,18 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 import { GameComponent } from './game/game.component';
-
+import { Tetris } from '@angular/tetris';
 
 
 
 
 @NgModule({
   declarations: [AppComponent, GameComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, Tetris],
   providers: [],
   bootstrap: [AppComponent],
 
-  
+
 })
 export class AppModule {}
 
