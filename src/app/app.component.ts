@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Player} from "../interfaces/player";
 
 @Component({
   selector: 'app-root',
@@ -6,30 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'examgame';
+  player: Player;
+  isRegister = false;
 
-user: any;
-userList: any = [];
-editIndex: number = 0;
-isRegister = false;
-
-constructor() {
-  this.user = {};
-}
-
-public add() {
-
-  this.userList.push(this.user);
-  this.user = {};
-  console.log(this.userList);
-}
-
-public save() {
-  this.isRegister = true;
-  if (this.editIndex != null) {
-    this.userList[this.editIndex].name = this.user.name;
-    this.userList[this.editIndex].gender = this.user.gender;
+  constructor() {
+    this.player = {} as Player;
   }
 
-}
+  public start() {
+    if (this.isValid()) {
+      console.log(this.player);
+      this.isRegister = true;
+    }
+  }
+
+  public isValid() {
+    if (this.player.name == null || this.player.name == "") {
+      alert("Wprowadz imie!");
+      return false;
+    }
+    if (this.player.email == null || this.player.email == "") {
+      alert("Wprowadz email!");
+      return false;
+    }
+    return true;
+  }
+
+  public onExitGame(event: boolean) {
+    this.isRegister = event;
+  }
+
 }

@@ -1,1 +1,54 @@
-<p>game works!</p>
+<h2>Welecome {{player.name}}</h2>
+
+<tetris-core #game
+             (lineCleared)="onLineCleared()"></tetris-core>
+
+<table>
+  <tr>
+    <td>
+      <button (click)="actionStart()">Start</button>
+    </td>
+    <td>
+      <button (click)="actionStop()">Stop</button>
+    </td>
+    <td>
+      <button (click)="game.actionReset()">Reset</button>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button (click)="game.actionRotate()">Rotate</button>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="game.actionLeft()">Left</button>
+    </td>
+    <td></td>
+    <td>
+      <button (click)="game.actionRight()">Right</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <button (click)="game.actionDown()">Down</button>
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <button (click)="exit()" class="exitButton">Exit game</button>
+  </tr>
+  <tr>
+    <p>Points: {{points}}</p>
+  </tr>
+  <tr>
+    <p style="font-size: 20px">Game time: {{gameTime}}</p>
+  </tr>
+</table>
+
+

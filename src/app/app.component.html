@@ -1,67 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <div id="container" style="color:rgb(81, 255, 0);">
+<div id="container" style="color:rgb(81, 255, 0);">
 
- </div>
- <div id="calosc" style="color:white;">
+</div>
+<div id="calosc" style="color:white;">
+</div>
+
+
+<style></style>
+<head>
+  <title>Angular Tetris Game</title>
+</head>
+<body>
+<div *ngIf="!isRegister">
+  <h1>Exam Task</h1>
+  <p>Tetris Game</p>
+
+  <div>
+    <label>Name: <input type="text" [(ngModel)]="player.name"/></label><br/>
+    <label>E-mail: <input type="text" [(ngModel)]="player.email"/></label><br/>
   </div>
 
+  <button (click)="start()">PLAY</button>
+</div>
 
-  <style></style>
-  <head>
-    <title>Angular Tetris Game</title>
-  </head>
-  <body>
-  <div *ngIf="!isRegister">
-    <h1>Exam Task</h1>
-    <p>Tetris Game</p>
-
-
-      <p></p>
-
-      <button (click)="add()">save</button>
-      <ul *ngFor="let user of userList; let i = index">
-        {{
-        i + 1
-        }}
-        {{
-        user.name
-        }}
-        {{
-        user.age
-        }}
-        {{
-        user.gender
-        }}
-
-        <button (click)="save()">Go!</button>
-
-      </ul>
-
-
-      <div >
-        <label>Name: <input type="text" [(ngModel)]="user.name" /></label><br />
-        <label>E-mail: <input type="text" [(ngModel)]="user.mail" /></label><br />
-        Gender:
-        <label
-        ><input
-          type="radio"
-          [(ngModel)]="user.gender"
-          value="male"
-        />male</label
-        >
-        <label
-        ><input
-          type="radio"
-          [(ngModel)]="user.gender"
-          value="female"
-        />female</label >
-
-        <br />
-        <pre>user = {{ user | json }}</pre>
-      </div>
-    </div>
-
-  <app-game *ngIf="isRegister"></app-game>
-  </body>
+<app-game *ngIf="isRegister" [player]="player" (onExitGame)="onExitGame($event)"></app-game>
+</body>
 </html>
